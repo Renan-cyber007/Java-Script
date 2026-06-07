@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <style>
+        body {
+            font: normal 24pt Arial;
+            background-color: #f8f8f8;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <script> 
+    var n1 = Number.parseFloat(window.prompt("Digite um numero:"))
+    var n2 = Number.parseFloat(window.prompt("Digite outro numero:"))
+    var soma = n1 + n2
+    var subtracao = n1 - n2
+    var multiplicacao = n1 * n2
+    var divisao = n1 / n2
+    var resto = n1 % n2
+    document.writeln("O resultado da soma é " + soma + "<br/>")
+    document.writeln("O resultado da subtração é " + subtracao + "<br/>")
+    document.writeln("O resultado da multiplicação é " + multiplicacao + "<br/>")
+    document.writeln("O resultado da divisão é " + divisao + "<br/>")
+    document.writeln("O resultado do resto é " + resto + "<br/>")
+    </script>
+</body>
+</html>
