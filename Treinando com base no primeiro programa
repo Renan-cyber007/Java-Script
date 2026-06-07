@@ -1,0 +1,28 @@
+!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro Programa sem ajuda nenhuma</title>
+    <style>
+        body {
+            background-color: rgb(211, 211, 211);
+            color: rgb(24, 24, 24);
+            font-family: default, sans-serif;
+        }
+        h1 {
+            color: rgb(24, 24, 24);
+        }
+    </style>
+</head>
+<body>
+<h1> A Arte da Guerra Resumo</h1> 
+<h2>Escrito há mais de 2.500 anos pelo general chinês Sun Tzu, A Arte da Guerra é um tratado militar dividido em 13 capítulos que, apesar de sua origem bélica, continua sendo estudado até hoje em negócios, esportes, política e liderança. Sua filosofia central é simples e poderosa: a guerra se vence antes de ser travada. Sun Tzu defende que a vitória pertence a quem melhor avalia cinco fatores  o propósito moral, o clima, o terreno, a qualidade da liderança e a organização do exército  e que toda decisão deve vir do planejamento, não do impulso.
+O livro ensina que conhecer a si mesmo e ao inimigo é a base de qualquer estratégia: quem ignora um dos dois está fadado à derrota. Mas o ponto mais surpreendente é que, para Sun Tzu, o ápice da arte militar não é vencer batalhas, e sim torná-las desnecessárias  vencer pelo esgotamento, pela diplomacia, pela ameaça ou pelo engano, sem derramar uma gota de sangue. "Toda guerra é baseada no engano", afirma ele: aparente fraqueza quando és forte, força quando és fraco, e ataque sempre onde o inimigo menos espera.
+Outro pilar essencial é a flexibilidade. Assim como a água não tem forma fixa e se adapta a qualquer recipiente, o bom estrategista molda suas táticas ao terreno e ao adversário, pois a rigidez é sempre uma forma de fraqueza. Sun Tzu também fala sobre o uso correto da energia coletiva — não basta ter muitos homens, é preciso saber represar essa força e soltá-la no momento exato, como uma enxurrada. Por fim, dedica um capítulo inteiro à espionagem, defendendo que a informação vale mais do que qualquer exército, e que o general que não investe em inteligência está essencialmente cego no campo de batalha. Em resumo, A Arte da Guerra é um manual sobre vencer com a menor força, no menor tempo e com o menor custo possível.</h2>
+<script>
+    window.alert("Bem-vindo ao Site!") //Janela de alerta 
+    window.prompt("Voce Gostou Do Conteúdo?") //Janela de pergunta com caixa de texto para resposta
+</script>  
+</body>
+</html>
