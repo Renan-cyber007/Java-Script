@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações</title>
+    <style>
+        body {
+            font: normal 30pt Arial;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <script>
+       var nome = window.prompt ("Olá,Qual é o seu nome?")
+       var turma = (window.prompt ("Qual é a sua turma?"))
+       var n1 = parseFloat(window.prompt("Digite sua Nota 1:"))
+       var n2 = parseFloat(window.prompt("Digite sua Nota 2:"))
+        var n3 =parseFloat(window.prompt ("Digite sua Nota 3:"))
+        var media = (n1 + n2 +n3) / 3
+       document.writeln("Aluno: " + nome)
+       document.writeln("<br>Turma : " + turma)
+       document.writeln("<br>Nota 1 : " + n1)
+       document.writeln("<br>Nota 2 : " + n2)   
+        document.writeln("<br>Nota 3 : " + n3)
+        document.writeln("<br>Média : " + media.toFixed(2))
+    </script>
+</body>
+</html>
