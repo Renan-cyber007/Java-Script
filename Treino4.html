@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salário</title>
+    <style>
+        body{
+            font-family: normal 16pt Arial;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Salário</h1>
+   <script>
+    var nome = window.prompt("Digite seu nome:")
+    var salario = Number(window.prompt("Digite seu salário:"))
+    var anual = salario * 12
+    var diario = salario / 30 
+    var hora = diario / 8
+    document.writeln("<h2>Olá " + nome + ", Aqui estão seu dados salariais:</h2>")
+    document.writeln("<h3>Mensal: R$ " + salario.toFixed(2) + "</h3>")
+    document.writeln("<h3>Anual: R$ " + anual.toFixed(2) + "</h3>")
+    document.writeln("<h3>Diário: R$ " + diario.toFixed(2) + "</h3>")
+    document.writeln("<h3>Por Hora: R$ " + hora.toFixed(2) + "</h3>")
+   </script> 
+</body>
+</html>
