@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculadora de Conversão de Temperatura</title>
+    <style>
+        body{
+            font-family: Arial 26pt;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculadora de Conversão de Temperatura</h1>
+    <script>
+        var C = window.prompt("Digite uma temperatura em Celsius: ")
+        var F = (C * 9/5) + 32 
+        document.writeln("A Temperatura em Celsius é: "+ C + "°C")
+        document.writeln("<br>")
+        document.writeln("A Temperatura em Fahrenheit é: " + F + "°F")
+    </script>
+</body>
+</html>
