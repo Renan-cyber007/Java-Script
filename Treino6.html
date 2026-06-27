@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="text" id="nome" placeholder="Digite seu Nome">
+   <input type="number" id="idade" placeholder="Digite sua Idade">
+   <button onclick="cumprimentar()">Cumprimentar</button>
+
+   <h2 id = "resultado"></h2>
+   
+   <script>
+    function cumprimentar () {
+        var nome = document.getElementById("nome").value
+        var idade = document.getElementById("idade").value
+            document.getElementById("resultado").innerHTML = nome + " tem " + idade + " anos"
+    }
+   </script>
+</body>
+</html>
