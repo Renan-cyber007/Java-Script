@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcula Salário Com Desconto</title>
+</head>
+<body>
+    <script>
+      var nome = window.prompt("Qual seu Nome?: ")  
+      var salario = parseFloat(window.prompt("Qual Seu Salário?: "))
+      var inss = salario * 0.10
+      var sl = salario - inss 
+      window.alert("Olá " + nome )
+      window.alert("Salário Bruto:  R$ "+ salario.toFixed(2))
+      window.alert("Desconto INSS:  R$ "+ inss.toFixed(2))
+      window.alert("Salário Líquido: R$ " + sl.toFixed(2))
+    </script>
+</body>
+</html>
