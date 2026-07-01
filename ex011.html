@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Nacionalidade</title>
+    <style>
+        body {
+            background-color: rgb(245, 248, 195);
+            color: rgb(0, 0, 0);
+            font: normal 18pt Arial            
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Nacionalidade</h1>
+    <input type="text" name="txt1" id="txt1" placeholder="Digite o país que você vive">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div> 
+
+    <script>
+        function verificar(){
+            var txt1 = document.getElementById('txt1')
+            var res = document.getElementById('res')
+            var pais = txt1.value
+            res.innerHTML = 'Você vive no país: ' + '<strong>' + pais + '</strong>'
+            if (pais == 'Brasil'){
+                res.innerHTML += '<p>Você é <strong>BRASILEIRO</strong></p>'
+            } else {
+                res.innerHTML += '<p>Você é <strong>ESTRANGEIRO</strong></p>'
+            }
+        }
+    </script>
+</body>
+</html>
