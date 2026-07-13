@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificador de Idade e Desconto</title>
+</head>
+<body>
+    <input type="number" id="idade" placeholder="Digite sua idade">
+    <br>
+    <label>
+        <input type="checkbox" id="def">
+        Possui deficiência?
+    </label>
+    <br>
+    <button onclick="classificarIdade()">Classificar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function classificarIdade() {
+            const idade = parseInt(document.getElementById("idade").value);
+            const deficiencia = document.getElementById("def").checked;
+            let resultado = "";
+
+            if (idade < 12) {
+                resultado = "Classificação: Criança";
+                resultado += "\nVocê tem direito a Meia-entrada.";
+            } else if (idade >= 12 && idade < 18) {
+                resultado = "Classificação: Adolescente";
+                resultado += deficiencia ? "\nVocê tem direito a Meia-entrada." : "\nVocê não tem direito a Meia-entrada.";
+            } else if (idade >= 18 && idade < 60) {
+                resultado = "Classificação: Adulto";
+                resultado += deficiencia ? "\nVocê tem direito a Meia-entrada." : "\nVocê não tem direito a Meia-entrada.";
+            } else {
+                resultado = "Classificação: Idoso";
+                resultado += "\nVocê tem direito a Meia-entrada.";
+            }
+
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>
