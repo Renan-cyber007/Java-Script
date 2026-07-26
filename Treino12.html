@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        body{
+            background-color: rgb(230, 230, 236);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antecessor e Sucessor</h1>
+    <input type="number" id="n1" placeholder="Digite um Numero: ">
+    <button onclick ="calcular()" >Calcular</button>
+
+ <script>
+   function calcular() {
+    var n1 = parseInt(document.getElementById("n1").value)
+    var ant = (n1 - 1)
+    var suc = Number(n1 + 1)
+    document.writeln ("O Antecessor de " + n1 + " é: " + ant )
+    document.writeln("O Sucessor de " + n1 + " é: " + suc)
+   }
+ </script>   
+</body>
+</html>
