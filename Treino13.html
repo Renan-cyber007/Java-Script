@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros</title>
+</head>
+<body>
+    <h1>Aluguel de Carros</h1>
+    <button onclick="calcular()">calcular</button>
+    
+    <script>
+    function calcular () {
+        var dias = parseFloat(window.prompt("Por quantos dias voce utilizou o veiculo? "))
+        var km = parseFloat(window.prompt("Quantos quilometros voce dirigiu? "))
+        var diaria = 60
+        var kmr = 0.15
+        var resdiaria = (dias * diaria)
+        var reskm = (kmr * km)
+        var resultado = (resdiaria + reskm)
+        window.alert("O Valor que voce devera pagar deve ser de " + resultado.toFixed(2))
+    }
+    </script>
+</body>
+</html>
