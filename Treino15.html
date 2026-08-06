@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Idade</title>
+</head>
+<body>
+    <h1>Classificação de Idade</h1>
+    <input type="number" name="n1" id="n1" placeholder="Qual a sua Idade?: ">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>  
+        function verificar() { 
+            var n1 = Number(document.getElementById("n1").value)
+            var res = document.getElementById("res")
+
+            if (n1 < 6) { 
+                res.innerHTML = "Voce é um BEBE"
+            } else if (n1 <= 12) { 
+                res.innerHTML = "Voce tem " + n1 + " anos de idade voce é uma Criança"
+            } else if (n1 < 18) {
+                res.innerHTML = "Voce tem " + n1 + " anos de idade voce é um ADOLESCENTE"
+            } else if (n1 < 60) {
+                res.innerHTML = "Voce tem " + n1 + " anos de idade voce é um ADULTO"
+            } else {
+                res.innerHTML = "Voce tem " + n1 + " anos de idade voce é um IDOSO"
+            }
+        }
+    </script>
+</body>
+</html>
