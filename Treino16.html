@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Voto</title>
+    <style> 
+    body{
+        background-color: rgb(66, 121, 158);
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    </style>
+</head>
+<body>
+    <h1>Validador de Voto</h1>
+    <input type="number" name="n1" id="n1" placeholder="Qual a sua Idade?: ">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            var n1 = Number(document.getElementById("n1").value)
+            var res = document.getElementById("res")
+
+            if (n1 < 16) {
+                res.innerHTML = ("Voce tem " + n1 + " Anos Voce <strong>NÃO VOTA</strong>")
+            } else if ((n1 >= 16 && n1 < 18) || n1 >= 70) {
+                res.innerHTML = ("Voce tem" + n1 + " Anos <strong>Voto Opcional</strong>")
+            } else {
+            res.innerHTML = "Voce tem " + n1 + " Anos <strong>Voto Obrigatório</strong>"
+            }
+        }
+    </script>
+</body>
+</html>
