@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar</title>
+    <style>
+        body {
+            background-color: rgb(121, 120, 120);
+            font-family: Arial, sans-serif;
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Radar</h1>
+    <input type="number" name="n1" id="n1" placeholder="Sua Velocidade">
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res"></div>
+    <script>
+        function verificar() { 
+            var n1 = Number(document.getElementById("n1").value)
+            var res = document.getElementById("res")
+            
+            if (n1 > 80) { 
+                res.innerHTML = "Sua Velocidade foi de " + n1 + " Km/h. Voce Ultrapassou a Velocidade Maxima permitida <strong>MULTADO!</strong>"
+            } else {
+                res.innerHTML = "Sua Velocidade foi de " + n1 + " Km/h. <strong>BOA VIAGEM!</strong>"
+            }
+        }
+    </script>
+</body>
+</html>
