@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Semáforo de Trânsito</title>
+    <style>
+        body{
+            background-color: rgb(49, 49, 49);
+            font-family: sans-serif 25pt;
+            h1 {
+                color:white
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>O Semáforo de Trânsito</h1>
+    <input type="text" name="txt1" id="txt1" placeholder="Qual a cor do sinal?">
+    <button onclick = verificar() >verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar(){
+            var txt1 = document.getElementById("txt1")
+            var cor = txt1.value.toLowerCase()
+            var res = document.getElementById("res")
+            switch(cor){
+                case "verde":
+                    res.innerHTML = "<strong>PODE PASSAR!</strong>"
+                    res.style.color = "green"
+                break
+                case "amarelo":
+                    res.innerHTML = "<strong>Atenção! Reduza a velocidade.</strong>"
+                    res.style.color = "yellow"
+                break
+                case "vermelho":
+                    res.innerHTML = "<strong>PARE!</strong>"
+                    res.style.color = "red"
+                break
+                default:
+                    res.innerHTML="COR INVALIDA"
+                    res.style.color ="black"
+            }
+    
+ 
+        }
+
+    </script>
+</body>
+</html>
