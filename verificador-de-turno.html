@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Turno</title>
+    <style>
+        body{
+            background-color: rgb(71, 122, 151);
+            font-family: Arial 18pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Turno</h1>
+    <input type="number" name="horas" id="horas">
+    <button onclick="verificar()" id="verificar">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar() { 
+        var horas = parseInt(document.getElementById("horas").value)
+        var res = document.getElementById("res")
+        if(horas>=0 && horas<=11){
+            res.innerHTML ="<strong>BOM DIA!</strong>"
+        }
+        else if(horas>=12 && horas<=17){
+            res.innerHTML = "<strong>BOA TARDE!</strong>"
+        }
+        else if(horas>=18 && horas<=23){
+            res.innerHTML = "<strong>BOA NOITE!</strong>"
+        }
+        else {
+            res.innerHTML = "<strong>HORA INVALIDA</strong>"    
+        }
+         }
+    </script>
+</body>
+</html>
