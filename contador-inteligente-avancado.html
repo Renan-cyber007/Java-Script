@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Inteligente Avançado</title>
+    <style>
+        body{
+            background-color: rgb(138, 175, 207);
+            font-family: Arial 20pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>O Analisador de Idades e Números</h1>
+    <input type="number" name="n1" id="n1" placeholder="Digite um Numero">
+    <button onclick="adicionar()">Adicionar</button> 
+    <button onclick="finalizar()">Finalizar</button>
+    <div id="res"></div>
+    <script>
+        var num = document.getElementById("n1")
+        var res = document.getElementById("res")
+        var valores =  []
+        function adicionar(){
+            var n = Number(num.value)
+            valores.push(n)
+            res.innerHTML += " O número é " + n + "<br>"
+            console.log(valores)
+        }
+
+        function finalizar() {
+    var tot = valores.length
+    var soma = 0
+
+    // O laço vai rodar para CADA gaveta da lista:
+    for (var pos in valores) {
+        soma += valores[pos]
+    }
+
+    // Agora mostramos o total DEPOIS que o laço somou tudo!
+    res.innerHTML = "<p>Ao todo temos " + tot + " números cadastrados.</p>"
+    res.innerHTML += "<p>Somando todos os valores, temos " + soma + ".</p>"
+    }
+    </script>
+</body>
+</html>
