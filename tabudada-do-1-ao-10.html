@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada do 1 ao 10</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+            font-family:Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabuada do 1 ao 10</h1>
+    <input type="number" name="n1" id="n1" placeholder='Numero para a Tabuada?'>
+    <button onclick="calcular()">Calcular</button>
+    <div id="res"></div>
+    <script>
+       function calcular() {
+    let num = document.getElementById("n1")
+    let fim = Number(num.value)
+    let c = 1
+    let res = document.getElementById("res")
+    
+    res.innerHTML = ""
+
+    if (num.value.length == 0) {
+        res.innerHTML = "POR FAVOR DIGITE UM NUMERO"
+    } else {
+        while (c <= 10) {
+            res.innerHTML += fim + " x " + c + " = " + (fim * c) + '<br>'
+            c++
+        }
+    }
+}
+    </script>
+</body>
+</html>
