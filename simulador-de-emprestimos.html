@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador De Empréstimos</title>
+    <style>
+        body {
+            background-color: rgba(255, 127, 80, 0.623);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulador De Empréstimos</h1>
+    Valor do Bem (R$): <input type="number" name="vldb" id="vldb" placeholder="Digite O Valor">
+    <br>Salário do Cliente (R$): <input type="number" name="sdc" id="sdc" placeholder="Digite o Salario">
+    <br>Anos para Pagar: <input type="number" name="anop" id="anop" placeholder="Digite Quantos anos">
+    <br> <button onclick="calcular()">Calcular</button>
+    <div id="res"></div>
+    <script>
+    function calcular() {
+        let vldb = Number(document.getElementById('vldb').value)
+        let salario = Number(document.getElementById('sdc').value)
+        let anop = Number(document.getElementById('anop').value)
+        let res = document.getElementById('res')
+
+        if (vldb <= 0 || salario <= 0 || anop <= 0) {
+            alert('Por favor, preencha todos os campos com valores válidos!')
+            return
+        }
+
+        let meses = anop * 12
+        let parcelam = vldb / meses
+        let limitep = salario * 0.30
+
+        if (parcelam <= limitep) {
+            res.innerHTML = `<strong>APROVADO!</strong> O valor da sua parcela será de R$ ${parcelam.toFixed(2)}`
+            res.style.color = 'green'
+        } else {
+            res.innerHTML = `<strong>NEGADO!</strong><br>Sua parcela seria de R$ ${parcelam.toFixed(2)}, ultrapassando o limite máximo de R$ ${limitep.toFixed(2)} (30% do salário).`
+            res.style.color = 'darkred'
+        }
+    }
+    </script>
+</body>
+</html>
