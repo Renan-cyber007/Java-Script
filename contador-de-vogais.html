@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Vogais</title>
+    <style>
+        body{
+            background-color: #535355;
+            font-family: cursive;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador De Vogais</h1>
+    <input type="text" name="txt1" id="txt1" placeholder="Digite Uma Palavra">
+    <button onclick="verificar()">Verificar</button>
+    <div id="res"></div>
+    <script>
+        function verificar () {
+        var txt1 = document.getElementById('txt1')
+        var res = document.getElementById('res')
+        var maiu = txt1.value.toUpperCase()
+        var contador = 0
+        var c = 0
+        while (c < maiu.length) {
+            if (maiu[c] == 'A' || maiu[c] == 'E' ||  maiu[c] == 'I' || maiu[c] == 'O' || maiu[c] == 'U')  {
+                contador++
+            }
+            c++
+        }
+        res.innerHTML = `O total de vogais é: ${contador}`
+        }
+    </script>
+</body>
+</html>
