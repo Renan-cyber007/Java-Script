@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Esteira e Empacotamento</title>
+    <style>
+        body{
+            background-color: burlywood;
+            color: rgb(58, 44, 44);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Esteira e Empacotamento</h1>
+    <label for="txtdoce">Escolha o Doce:</label>
+    <select id="txtdoce">
+        <option value="Bala">🍬 Bala</option>
+        <option value="Chocolate">🍫 Chocolate</option>
+        <option value="Cupcake">🧁 Cupcake</option>
+    </select>
+
+    <label for="txtqtd">Quantidade:</label>
+    <input type="number" id="txtqtd" min="1" max="10">
+    <br><button onclick="adicionar()">Adicionar à Esteira</button>
+    <button onclick="despachar()">Despachar Caixa</button>
+    <div id="res"></div>
+
+    <script>
+    let esteira = []
+    function adicionar(){
+        let doce = document.getElementById('txtdoce').value
+        let qtd = document.getElementById('txtqtd').value
+        
+        if (qtd.length == 0 || qtd < 1 || qtd > 10) { 
+            alert('[ERRO] Valor Inválido!')
+        } else {
+            let c = 1
+            while (c <= qtd) {
+                esteira.push(doce)
+                c++
+            }
+            let res = document.getElementById('res')
+            res.innerHTML = `Conteúdo da Esteira: ${esteira}`
+        }
+    }
+
+    function despachar() {
+        let totalitens = esteira.length
+        let qBala = 0
+        let qChocolate = 0
+        let qCupcake = 0 
+        
+        for (let pos = 0; pos < esteira.length; pos++) {
+            if (esteira[pos] == 'Bala') {
+                qBala++
+            } else if (esteira[pos] == 'Chocolate') {
+                qChocolate++
+            } else if (esteira[pos] == 'Cupcake') {
+                qCupcake++
+            }
+        }
+
+        let pesototal = (qBala * 5) + (qChocolate * 25) + (qCupcake * 50)
+        let res = document.getElementById('res')
+        res.innerHTML = `
+            <h2>📦 Relatório do Envio:</h2>
+            <p>Total de itens na caixa: <strong>${totalitens}</strong></p>
+            <p>🍬 Balas: ${qBala} | 🍫 Chocolates: ${qChocolate} | 🧁 Cupcakes: ${qCupcake}</p>
+            <p>⚖️ Peso Total: <strong>${pesototal}g</strong></p>
+        `
+
+        if (pesototal > 300) { 
+            res.innerHTML += `<p style="color: red;"><strong>🚚 Caixa muito pesada! Remova itens.</strong></p>`
+        } else {
+            res.innerHTML += `<p style="color: green;"><strong>🚚 Caixa liberada para a transportadora!</strong></p>`
+        }
+
+        esteira = []
+    }
+</script>
+</body>
+</html>
