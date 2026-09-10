@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de Números</title>
+    <style>
+        body{
+            background-color: rgba(255, 127, 80, 0.856);
+            font-family: Arial, Helvetica, sans-serif ;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analisador De Números</h1>
+    Digite Um Número: <input type="number" name="n1" id="n1">
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="finalizar()">Finalizar</button>
+    <div id="res"></div>
+    <br><br>
+    <select id="flista" size="6" style="width: 150px;"></select>
+    <br><br>
+    <script>
+        let valores = []
+        let res = document.getElementById('res')
+
+    function adicionar() {
+    let num = document.getElementById('n1')
+    let lista = document.getElementById('flista')
+
+    if (num.value.length != 0 && Number(num.value) >= 1 && Number(num.value) <= 100 && valores.indexOf(Number(num.value)) == -1) {
+        valores.push(Number(num.value))
+
+        let item = document.createElement('option')
+        item.text = `Valor ${num.value} adicionado.`
+        lista.appendChild(item)
+
+        res.innerHTML = ''
+    } else {
+        res.innerHTML = 'Digite um número válido!'
+    }
+    num.value = ''
+    num.focus()
+}
+
+    function finalizar () {
+        if(valores.length == 0) {
+        window.alert('Adicione valores antes de finalizar!')
+        }
+        else {
+        valores.length
+        let maior = valores [0]
+        let menor = valores [0]
+        let soma = 0 
+        for (let pos in valores) {
+        soma += valores[pos]
+
+        if (valores[pos] > maior) {
+        maior = valores[pos]
+        }   
+        if (valores[pos] < menor) {
+        menor = valores[pos]
+        }
+        }
+        let media = soma / valores.length
+        res.innerHTML = "O Total de números cadastrados foi de " + valores.length + "<br>"
+        res.innerHTML += "O maior valor informado foi " + maior + "<br>"
+        res.innerHTML += "O menor valor informado foi " + menor + "<br>"
+        res.innerHTML += "A Soma de todos os valores é de " + soma + "<br>"
+        res.innerHTML += "A média dos valores digitados foi de " + media
+        }
+    } 
+    </script>
+</body>
+</html>
