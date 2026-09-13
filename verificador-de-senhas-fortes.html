@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Senhas Fortes</title>
+    <style>
+        body {
+            background-color: rgb(180, 159, 128);
+            font-family:'Times New Roman', Times, serif
+        }
+    </style>
+</head>
+<body>
+    <h1>Validador de Senhas Fortes</h1>
+    <input type="password" name="password" id="password" placeholder="Digite Sua Senha:">
+    <input type="checkbox" id="mostrar" onclick="mostrarSenha()"> Mostrar Senha
+    <button onclick="verificarSenha()">Verificar Senha</button>
+    <div id="resultado"></div>
+    <script>
+        function mostrarSenha() {
+    let campoSenha = document.getElementById('password')
+    
+    if (campoSenha.type === 'password') {
+        campoSenha.type = 'text'
+    } else {
+        campoSenha.type = 'password'
+    }
+        }
+        function verificarSenha() {
+            let senha = document.getElementById("password").value
+            let res = document.getElementById("resultado")
+
+            let temTamanhoCerto = false
+            let temNumero = false
+
+            if (senha.length >= 8) {
+                temTamanhoCerto = true
+            }
+
+            for (let pos = 0; pos < senha.length; pos++) {
+                let caractere = senha[pos]
+                if((isNaN(caractere) == false)) {
+                    temNumero = true
+                }
+            }
+            if (temTamanhoCerto == true && temNumero ==true) {
+                res.innerHTML= "<strong>Senha Forte</strong>"
+            }
+            else {
+                res.innerHTML= "<strong>Senha Fraca</strong>"
+            }
+
+        }
+    </script>
+</body>
+</html>
