@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna Eletrônica Simplificada</title>
+    <style>
+        body {
+            background-color: rgb(104, 158, 207);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Urna Eletrônica Simplificada</h1>
+    <button onclick="bolsonaro22()">F.BOLSONARO</button>
+    <button onclick="lula13()">LULA</button>
+    <button onclick="votobranco()">VOTO EM BRANCO</button>
+    <br><button onclick="finalizar()">Finalizar Votação</button>
+    <div id="res"></div>
+    <script>
+        let bolso = 0
+        let lula = 0
+        let vtb = 0
+        let res = document.getElementById("res")
+        function bolsonaro22() {
+            bolso++
+        }
+        function lula13() {
+            lula++
+        }
+        function votobranco() {
+            vtb++
+        }
+        function finalizar() {
+            let totalvotos = lula + bolso + vtb
+            if (totalvotos === 0) {
+                res.innerHTML = "Nenhum voto foi registrado!";
+                return;
+            }
+
+            if (bolso>lula && bolso>vtb) {
+                res.innerHTML="O Candidato Bolsonaro Venceu as Eleiçoes com o total de " + bolso + " Votos"
+            }
+            else if (lula>bolso && lula>vtb) {
+                res.innerHTML="O Candidato Lula Venceu as Eleiçoes com o total de " + lula + " Votos"
+            }
+            else if (vtb > bolso && vtb > lula) {
+                res.innerHTML = "A maioria dos votos foi em BRANCO (" + vtb + " voto(s)). Nenhum candidato foi eleito!";
+            }
+            else if(bolso == lula && bolso>vtb){
+                res.innerHTML="Houve um EMPATE entre Bolsonaro e Lula com " + bolso + " voto(s) cada!"
+            }
+            else {
+                res.innerHTML="Houve um Empate Geral na votação!"
+            }
+        }
+    </script>
+</body>
+</html>
