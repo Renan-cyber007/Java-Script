@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletrônico</title>
+    <style>
+        body {
+            background-color: rgba(190, 28, 0, 0.877);
+        }
+    </style>
+</head>
+<body>
+    <h1>Caixa Eletrônico</h1>
+    <input type="number" id="vlsaque" name="vlsaque">
+    <button onclick="saque()">Saque</button>
+    <div id="res"></div>
+
+    <script>
+        function saque() {
+            let valoratual = Number(document.getElementById("vlsaque").value)
+            let res = document.getElementById("res")
+            let valorInicial = valoratual
+            let nota50 = Math.floor(valoratual / 50)
+            valoratual = valoratual % 50
+            let nota20 = Math.floor(valoratual / 20)
+            valoratual = valoratual % 20
+            let nota10 = Math.floor(valoratual / 10)
+            valoratual = valoratual % 10
+            let nota5 = Math.floor(valoratual / 5)
+
+            res.innerHTML = `Você solicitou R$ ${valorInicial}. Você precisará de:<br>`
+            res.innerHTML += `• ${nota50} Notas de 50<br>`
+            res.innerHTML += `• ${nota20} Notas de 20<br>`
+            res.innerHTML += `• ${nota10} Notas de 10<br>`
+            res.innerHTML += `• ${nota5} Notas de 5`
+        }
+    </script>
+</body>
+</html>
