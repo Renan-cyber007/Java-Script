@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Média com Lista de Presença</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        input {
+            margin: 0.5%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de Média com Lista de Presença</h1>
+    1 Trimestre: <input type="number" name="nota1" id="nota1"><br>
+    2 Trimestre: <input type="number" name="nota2" id="nota2"><br>
+    3 Trimestre: <input type="number" name="nota3" id="nota3"><br>
+    Faltas:<input type="number" name="faltas" id="faltas">
+    <button onclick="analisarsituacao()">Verificar</button>
+    <div id="res"></div>
+
+    <script>
+        function analisarsituacao(){
+            let n1 = Number(document.getElementById("nota1").value)
+            let n2 = Number(document.getElementById("nota2").value)
+            let n3 = Number(document.getElementById("nota3").value)
+            let faltas = Number(document.getElementById("faltas").value)
+            let res = document.getElementById("res")
+            let mednotas = (n1 + n2 + n3) / 3
+
+            if (mednotas >= 6 && faltas <= 25) {
+                res.innerHTML = "Sua Média foi de " + mednotas.toFixed(1) + " E as suas faltas foram: " + faltas + ". Parabéns, você foi Aprovado!"
+            }
+            else if (faltas > 25) {
+                res.innerHTML = "Suas Faltas foram de " + faltas + ". Você foi Reprovado por Falta!"
+            }
+            else if (mednotas < 6) {
+                res.innerHTML = "Sua Média foi de " + mednotas.toFixed(1) + ". Você foi Reprovado por Nota!"
+            }
+        }
+    </script>
+</body>
+</html>
